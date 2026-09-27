@@ -13,3 +13,5 @@ __pycache__/
 Thumbs.db
 # Internship-provided raw datasets
 data/raw/
+# Processed internship datasets
+data/processed/
