@@ -304,7 +304,7 @@ The Week 3 analysis produced several evidence-based recommendations:
 
 ---
 
-# Repository Structure
+## Repository Structure
 
 ```text
 FinTrust-Banking-Analytics/
@@ -316,7 +316,8 @@ FinTrust-Banking-Analytics/
 |-- notebooks/
 |   |-- 01_data_profiling.py
 |   |-- FinTrust_Week2_Data_Analysis.ipynb
-|   `-- FinTrust_Week3_Advanced_Analysis.ipynb
+|   |-- FinTrust_Week3_Advanced_Analysis.ipynb
+|   `-- FinTrust_Week4_Final_Data_Analysis.ipynb
 |
 |-- sql/
 |   |-- FinTrust_Week2_SQL_Analysis.sql
@@ -324,15 +325,14 @@ FinTrust-Banking-Analytics/
 |
 |-- dashboard/
 |   |-- FinTrust_Week2_Analytics_Dashboard.pbix
-|   `-- FinTrust_Week3_Analytics_Dashboard.pbix
+|   |-- FinTrust_Week3_Analytics_Dashboard.pbix
+|   `-- FinTrust_Week4_Final_Analytics_Dashboard.pbix
 |
 |-- reports/
+|   `-- FinTrust_Week4_Final_Analytics_Report.md
+|
 |-- .gitignore
 `-- README.md
-```
-
-The internship-provided raw datasets are excluded from version control.
-
 ---
 
 # Project Progress
@@ -344,16 +344,133 @@ The internship-provided raw datasets are excluded from version control.
 
 ---
 
-# Next Steps — Week 4
+## Week 4 — Final Validation & Refinement
 
-Week 4 will focus on:
+Week 4 focused on final testing, validation, refinement and preparation of the FinTrust Banking Analytics solution for final presentation.
 
-- Final analytical quality assurance
-- Cross-checking SQL, Python, and Power BI outputs
-- Refining the final dashboard
-- Consolidating the strongest business findings
-- Reviewing assumptions and limitations
-- Preparing the final project report
-- Preparing the final presentation
-- Improving repository documentation for portfolio presentation
-- Finalizing the FinTrust Banking Analytics project
+## Week 4 Objective
+
+Finalize the Data Analytics solution by:
+
+- validating data quality and KPI calculations;
+- re-testing important SQL analyses;
+- validating Python reproducibility;
+- refining the Power BI dashboard;
+- validating major business findings;
+- refining findings where evidence required a change in interpretation;
+- documenting assumptions, limitations and responsible use.
+
+## Final Data & KPI Validation
+
+The cleaned transaction dataset was independently validated using Python/Pandas.
+
+Key validation results:
+
+- 12,000 transaction records
+- 11 transaction fields
+- 0 missing values in the cleaned dataset
+- 0 duplicate transaction rows
+- 0 duplicate Transaction IDs
+- 0 zero or negative transaction amounts
+- Transaction period: January–March 2026
+- 90 active transaction days
+- 1,500 unique Customer IDs
+
+The six Power BI KPI calculations were independently recalculated and validated:
+
+| KPI | Final Result |
+|---|---:|
+| Total Customers | 1,500 |
+| Total Transactions | 12,000 |
+| Total Transaction Value | ₦560,477,354.85 |
+| Average Transaction Value | ₦46,706.45 |
+| Transaction Success Rate | 90.47% |
+| Risk Review Rate | 19.60% |
+
+## Final SQL Validation
+
+Five major SQL analyses were re-tested in MySQL:
+
+1. Customer transaction behaviour by segment
+2. Transaction performance by channel
+3. Monthly transaction trends
+4. High-value transaction patterns
+5. International versus domestic transaction performance
+
+The SQL validation confirmed that the major Week 3 analytical results were reproducible and supported by the underlying data.
+
+## Key Validation & Refinement
+
+One important finding was refined during Week 4.
+
+The original monthly analysis showed that February transaction volume decreased by 9.65% compared with January.
+
+A daily-normalized validation showed:
+
+- January: 133.32 transactions/day
+- February: 133.36 transactions/day
+- March: 133.32 transactions/day
+
+The final conclusion was therefore refined: February had lower total monthly transaction volume because it contained fewer calendar days, but underlying daily transaction activity remained stable.
+
+## Final Business Insights
+
+### 1. Everyday customers drive overall transaction activity
+
+711 Everyday customers generated 5,644 transactions worth approximately ₦261.46M.
+
+### 2. Mobile App dominates activity but has the lowest success rate
+
+The Mobile App processed 5,102 transactions worth approximately ₦240.10M and recorded an 89.75% success rate.
+
+### 3. Daily transaction activity remained stable across January–March
+
+Daily-normalized transaction activity remained approximately 133 transactions per day across all three months.
+
+### 4. High-value activity is concentrated in Transfers and Deposits
+
+Transfers generated 1,207 high-value transactions worth approximately ₦214.54M, while Deposits recorded the highest average high-value transaction amount at approximately ₦233,124.49.
+
+### 5. International transactions have a higher risk-review rate
+
+International transactions recorded a 36.88% risk-review rate compared with 18.88% for domestic transactions.
+
+## Final Dashboard Refinements
+
+The Week 4 Power BI dashboard was refined to improve:
+
+- monetary KPI formatting;
+- transaction-status readability;
+- slicer readability and usability;
+- overall visual clarity and management usability.
+
+The final dashboard provides a consolidated view of customer activity, transaction performance, trends, transaction outcomes, risk-review patterns and high-value activity.
+
+## Week 4 Deliverables
+
+- Final Power BI dashboard
+- Final Python analysis notebook
+- Advanced SQL analysis
+- KPI validation evidence
+- Final business insights
+- Business recommendations
+- Validation and refinement evidence
+- Data-quality documentation
+- Final analytics report
+
+## Limitations
+
+The FinTrust organisation and datasets are fictional and synthetic.
+
+The `Risk_Review_Flag` is a synthetic educational indicator and must not be interpreted as evidence of actual fraud or financial crime.
+
+The analysis covers January–March 2026 and is limited to the variables available in the supplied datasets.
+
+High-value transactions are defined using the dataset's overall average transaction value and should not be interpreted as an official banking threshold.
+
+## Project Progress
+
+- [x] Week 1 — Business Understanding & Data Profiling
+- [x] Week 2 — Data Preparation, SQL Analysis, Python EDA & Power BI Dashboard
+- [x] Week 3 — Advanced SQL, Advanced Python, Dashboard Enhancement & Validation
+- [x] Week 4 — Final Testing, Validation, Refinement & Final Analytics Solution
